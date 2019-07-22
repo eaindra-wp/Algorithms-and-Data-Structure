@@ -1,0 +1,28 @@
+all: stack queue b2l l2b
+	
+#problem 1a
+stack: testStack.o
+	g++ -Wall -o stack testStack.o
+testStack.o: testStack.cpp Stack.h
+	g++ -Wall -c testStack.cpp
+
+#problem 1b
+queue: testQueue.o
+	g++ -Wall -o queue testQueue.o
+testQueue.o: testQueue.cpp Queue.h Stack2.h 
+	g++ -Wall -c testQueue.cpp
+
+#problem 2b
+b2l: BinarytoList.o
+	g++ -Wall -o b2l BinarytoList.o
+BinarytoList.o: BinarytoList.cpp Binary.h LinkedList.h 
+	g++ -Wall -c BinarytoList.cpp
+
+#problem 2c
+l2b:  ListToBinary.o
+	g++ -Wall -o l2b  ListToBinary.o
+ ListToBinary.o: ListToBinary.cpp ListToBinary.h 
+	g++ -Wall -c ListToBinary.cpp
+
+clean:
+	rm -f *.o all

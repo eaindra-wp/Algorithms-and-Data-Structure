@@ -1,0 +1,25 @@
+CC = gcc
+CFLAGS = -Wall
+OBJ1 = BubbleSort.o
+OBJ2 = HeapSort.o
+OBJ3 = Variant-Heap.o
+
+all : BubbleSort HeapSort Variant-Heap
+
+BubbleSort: $(OBJ1) 
+	$(CC) $(CFLAGS) -o BubbleSort $(OBJ1) 
+BubbleSort.o: BubbleSort.c
+	$(CC) $(CFLAGS) -c BubbleSort.c
+
+HeapSort: $(OBJ2) 
+	$(CC) $(CFLAGS) -o HeapSort $(OBJ2) 
+HeapSort.o: HeapSort.c
+	$(CC) $(CFLAGS) -c HeapSort.c
+
+Variant-Heap: $(OBJ3) 
+	$(CC) $(CFLAGS) -o Variant-Heap $(OBJ2) 
+Variant-Heap.o: Variant-Heap.c
+	$(CC) $(CFLAGS) -c Variant-Heap.c
+
+clean: 
+	rm -f all *.o

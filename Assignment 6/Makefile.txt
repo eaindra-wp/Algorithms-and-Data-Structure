@@ -1,0 +1,6 @@
+test:
+	python Bucket.py
+	python Count.py
+	python Word.py
+	python Radix.py
+	

@@ -1,0 +1,19 @@
+CC = gcc
+CFLAGS = -Wall
+OBJ1 = 1-Recursive.o
+OBJ2 = 2-Recursive.o
+
+all : 1-Recursive 2-Recursive
+
+1-Recursive: $(OBJ1) 
+	$(CC) $(CFLAGS) -o 1-Recursive $(OBJ1) 
+1-Recursive.o: 1-Recursive.c
+	$(CC) $(CFLAGS) -c 1-Recursive.c
+
+2-Recursive: $(OBJ2) 
+	$(CC) $(CFLAGS) -o 2-Recursive $(OBJ2) 
+2-Recursive.o: 2-Recursive.c
+	$(CC) $(CFLAGS) -c 2-Recursive.c
+
+clean: 
+	rm -f all *.o

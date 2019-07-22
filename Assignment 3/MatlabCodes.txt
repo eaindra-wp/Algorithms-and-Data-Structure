@@ -1,0 +1,43 @@
+%for all functions
+a=load('Recursive.txt');
+b=load('Bottomup.txt');
+c=load('Closedform.txt');
+d=load('Matrix.txt');
+loglog(a(:,1),a(:,2));
+xlim([0 140000]);
+hold on;
+loglog(b(:,1),b(:,2));
+loglog(c(:,1),c(:,2));
+loglog(d(:,1),d(:,2));
+legend('Recursive','Bottom-Up','Closed-Form','Matrix');
+xlabel('n'); ylabel('time in seconds');
+title('Time taken comparison for all functions');
+
+%bottom-up
+a=load('Bottomup.txt');
+loglog(a(:,1),a(:,2));
+xlim([0 140000]);
+xlabel('n'); ylabel('time in seconds');
+title('Time taken with Bottom-Up Function');
+
+%Closed-form
+a=load('Closedform.txt');
+loglog(a(:,1),a(:,2));
+xlim([0 140000]);
+xlabel('n'); ylabel('time in seconds');
+title('Time taken with Closed-Form Function');
+
+%Matrix
+a=load('Matrix.txt');
+loglog(a(:,1),a(:,2));
+xlim([0 140000]);
+xlabel('n'); ylabel('time in seconds');
+title('Time taken with Matrix Function');
+
+%Recursive
+a=load('Recursive.txt');
+loglog(a(:,1),a(:,2));
+xlim([0 25]);
+xlabel('n'); ylabel('time in seconds');
+title('Time taken with Recursive Function');
+

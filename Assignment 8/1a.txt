@@ -1,0 +1,36 @@
+Elements in the list: [13, 44, 37, 7, 22, 16]
+(B as black, and  R as red)
+(The tree is shown in the preorder traversal.)
+
+#Insert 13 as root
+Preorder traversal: 13B   (First root as black)
+
+#Insert 44 as right child of 13
+Color of new nodes are red by default. 
+Preorder traversal: 13B 44R   
+
+#Insert 37
+Right rotate 37R
+Left rotate 13B
+Preorder traversal: 37B 13R 44R     (13's color changed to red, 37's color changed to Black)
+Colors changed as root must be black and all paths should have unique black nodes.
+
+#Insert 7 as left child of 13
+color change of uncle:44 and parent:13 is needed. If not, 13 cannot accept child 7 while
+being red, and NILs from 44 will have shorter black nodes during the path to the root. 
+Preorder traversal: 37B 13B 7R 44B
+
+#Insert 22 as right child of 13
+Preorder traversal:  37B 13B 7R 22R 44B
+
+#Insert 16 under 22
+color change of uncle:7 and parent:22, and 13
+(New node 16 is Red by default. Color of 13 must be red not to violate property 5; all paths must have
+same unique black nodes, and 13's child nodes 7 and 12 must be red as red parent can only have 
+black child nodes. Color of 44 remains the same.)
+Preorder traversal:  37B 13R 7B 22B 16R 44B
+
+The final tree is 37B 13R 7B 22B 16R 44B. 
+
+
+

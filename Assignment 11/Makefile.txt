@@ -1,0 +1,14 @@
+all : P2 P3 
+
+P2: P2.o
+	g++ -Wall -o P2 P2.o
+P2.o: P2.cpp
+	g++ -Wall -c P2.cpp
+
+P3: P3.o
+	g++ -Wall -o P3 P3.o
+P3.o: P3.cpp
+	g++ -Wall -c P3.cpp
+
+clean: 
+	rm -f all *.o

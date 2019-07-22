@@ -1,0 +1,55 @@
+CC = gcc
+CFLAGS = -Wall
+OBJ1 = LomotoTest.o
+OBJ2 = HoareTest.o
+OBJ3 = MedianTest.o
+OBJ4 = LomotoData.o
+OBJ5 = HoareData.o
+OBJ6 = MedianData.o
+OBJ7 = Threeway.o
+OBJ8 = Random.o
+
+all : LomotoTest HoareTest MedianTest LomotoData HoareData MedianData Threeway Random
+
+LomotoTest: $(OBJ1) 
+	$(CC) $(CFLAGS) -o LomotoTest $(OBJ1) 
+LomotoTest.o: LomotoTest.c
+	$(CC) $(CFLAGS) -c LomotoTest.c
+
+HoareTest: $(OBJ2) 
+	$(CC) $(CFLAGS) -o HoareTest $(OBJ2) 
+HoareTest.o: HoareTest.c
+	$(CC) $(CFLAGS) -c HoareTest.c
+
+MedianTest: $(OBJ3) 
+	$(CC) $(CFLAGS) -o MedianTest $(OBJ3) 
+MedianTest.o: MedianTest.c
+	$(CC) $(CFLAGS) -c MedianTest.c
+
+LomotoData: $(OBJ4) 
+	$(CC) $(CFLAGS) -o LomotoData $(OBJ4) 
+LomotoData.o: LomotoData.c
+	$(CC) $(CFLAGS) -c LomotoData.c
+
+HoareData: $(OBJ5) 
+	$(CC) $(CFLAGS) -o HoareData $(OBJ5) 
+HoareData.o: HoareData.c
+	$(CC) $(CFLAGS) -c HoareData.c
+
+MedianData: $(OBJ6) 
+	$(CC) $(CFLAGS) -o MedianData $(OBJ6) 
+MedianData.o: MedianData.c
+	$(CC) $(CFLAGS) -c MedianData.c
+
+Threeway: $(OBJ7) 
+	$(CC) $(CFLAGS) -o Threeway $(OBJ7) 
+Threeway.o: Threeway.c
+	$(CC) $(CFLAGS) -c Threeway.c
+
+Random: $(OBJ8) 
+	$(CC) $(CFLAGS) -o Random $(OBJ8) 
+Random.o: Random.c
+	$(CC) $(CFLAGS) -c Random.c
+
+clean: 
+	rm -f all *.o

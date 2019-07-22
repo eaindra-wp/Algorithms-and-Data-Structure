@@ -1,0 +1,14 @@
+all : Hash Greedy
+
+Hash: Hash.o
+	g++ -Wall -o Hash Hash.o
+Hash.o: Hash.cpp
+	g++ -Wall -c Hash.cpp
+
+Greedy: Greedy.o
+	g++ -Wall -o Greedy Greedy.o
+Greedy.o: Greedy.cpp
+	g++ -Wall -c Greedy.cpp
+
+clean: 
+	rm -f all *.o

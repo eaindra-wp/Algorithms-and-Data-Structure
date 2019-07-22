@@ -1,0 +1,45 @@
+{1,2,3,4}
+(R=red, B=black, the tree is shown in preorder traversal)
+
+#Method 1
+#Insert 1
+Preorder Traversal: 1B
+
+#Insert 2 as 1's right child
+Preorder Traversal: 1B 2R
+
+#Insert 3 as 2's right child
+Left rotate 2, change 1 and 2's color as root must be black
+and the tree must contain at least one red node.
+Preorder Traversal: 2B 1R 3R
+
+#Insert 4 as 3's right child
+Change color of parent:3 and uncle:1
+Preorder Traversal: 2B 1B 3B 4R
+ (2B 1R 3R 4B) is impossible as NIL node from 4B will 
+have more black nodes to reach root 2B. 
+(2B 1B 3R 4B is impossible since there will be no black node between 2B and NIL left node of 3R) 
+
+Right rotate 4 from 2B 1B 3B 4R
+<change of color 3 and 4>
+Result: 2B 1B 4B 3R   (3 as 4's left child) 
+
+Left rotate 3 from 2B 1B 3B 4R
+ (3B 2R 1B 4R) is not possible as NIL node under 1B will have
+more black nodes to reach 3B(root). 
+<Change color of 1 and 4>
+Result: 3B 2B 1R 4B (1 as 2's left child) 
+
+Right rotate 1 from  3B 2B 1R 4B
+<Change of color of 1 and 2 as all paths should have unique same number of black nodes>
+Result: 3B 1B 2R 4B    (2 as 1's right child)
+
+
+Possible red-black trees: 
+2B 1B 3B 4R
+2B 1B 4B 3R 
+3B 2B 1R 4B
+3B 1B 2R 4B
+
+
+
